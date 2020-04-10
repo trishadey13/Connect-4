@@ -1,0 +1,69 @@
+/* full screen */
+html {
+  background: url('https://wallpapertag.com/wallpaper/full/f/7/6/537444-large-light-blue-backgrounds-2560x1440.jpg');
+}
+
+/* header */
+h1 {
+  color: black;
+  text-align: center;
+  font-variant: petite-caps;
+}
+
+/* game board */
+#board {
+    margin: 0 auto;
+}
+
+/* game board table */
+#board td {
+    width: 50px;
+    height: 50px;
+    border: solid 2px black;
+}
+  
+/* pieces are div within game table cells: draw as colored circles */
+.piece {
+  animation-name: dropping;
+  animation-duration: 500ms;
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+@keyframes dropping {
+  from {
+    transform: translateY(-350px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* make pieces red/blue,  depending on player 1/2 piece */
+.piece.player1 {
+  background-color: red;
+}
+
+.piece.player2 {
+  background-color: blue;
+}
+  
+/* column-top is table row of clickable areas for each column */
+#column-top td {
+  border: dashed 1px black;
+}
+
+#column-top td.spotsLeft:hover {
+  display: block;
+  content: url('https://static.thenounproject.com/png/180638-200.png');
+  background-color: green;
+}
+
+#column-top td.noSpotsLeft:hover {
+  display: block;
+  content: url('https://static.thenounproject.com/png/2262985-200.png');
+  background-color: red;
+}
+  
